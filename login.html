@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Skill Swap Hub</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background-color: #dfe6ee;
+        }
+
+        .top-bar {
+            background: #2f4f88;
+            color: white;
+            padding: 15px;
+            font-weight: bold;
+        }
+
+        header {
+            background: #2f4f88;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .login-box {
+            width: 350px;
+            margin: 80px auto;
+            background: #f2f2f2;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        .login-box h2 {
+            margin-bottom: 20px;
+        }
+
+        .login-box input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .login-box button {
+            background: #2f4f88;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-box button:hover {
+            background: #1f3560;
+        }
+
+        .signup-text {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="top-bar">VIT-AP University</div>
+
+<header>
+    <h1>Skill Swap Hub</h1>
+</header>
+
+<div class="login-box">
+    <h2>Login</h2>
+
+    <input type="text" id="username" placeholder="Enter Name">
+    <input type="password" placeholder="Enter Password">
+
+    <br><br>
+    <button onclick="login()">Login</button>
+
+    <div class="signup-text">
+        New user? <a href="register.html">Signup</a>
+    </div>
+</div>
+
+<script>
+function login() {
+    const name = document.getElementById("username").value;
+
+    if(name === "") {
+        alert("Please enter your name");
+        return;
+    }
+
+    localStorage.setItem("username", name);
+
+    window.location.href = "register.html";
+}
+</script>
+
+</body>
+</html>

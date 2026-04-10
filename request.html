@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Request - Skill Swap Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="top-bar">
+    VIT-AP University
+</div>
+
+<header>
+    <h1>Skill Swap Hub</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="register.html">Register</a>
+        <a href="skills.html">Browse Skills</a>
+        <a href="request.html" class="active">Request</a>
+    </nav>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+</header>
+
+<section class="form-section">
+    <h2>Send Exchange Request</h2>
+    <p>
+      1. Go to Browse Skills page  
+      2. Choose a user  
+      3. Enter their name below  
+      4. Send request
+    </p>
+
+<h3>Suggested Matches</h3>
+<div id="matches"></div>
+
+<script>
+fetch("http://localhost:8080/matchUsers")
+.then(res => res.json())
+.then(data => {
+
+    let output = "";
+
+    if (data.length === 0) {
+        output = "<p>No matches found</p>";
+    } else {
+
+        data.forEach(match => {
+            output += `
+                <div style="margin:10px; padding:10px; border:1px solid #ccc;">
+                    <b>${match}</b>
+                    <br>
+                    <button onclick="fillPartner('${match}')">Select</button>
+                </div>
+            `;
+        });
+
+    }
+
+    document.getElementById("matches").innerHTML = output;
+});
+</script>
+
+    <form onsubmit="sendRequest(event)">
+    <input type="text" id="yourName" placeholder="Enter Your Name (Example: Priya)" required>
+    
+    <input type="text" id="partnerName" placeholder="Enter Partner Name (from Browse Skills)" required>
+    
+    <input type="text" id="message" placeholder="Write message (Example: I teach HTML, you teach Java)" required>
+    
+    <button type="submit">Send Request</button>
+</form>
+
+<p id="msg"></p>
+</section>
+
+<footer class="main-footer">
+    © 2026 VIT-AP University
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

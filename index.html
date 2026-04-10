@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skill Swap Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="top-bar">
+    VIT-AP University
+</div>
+
+<header>
+    <div class="header-content">
+        <h1><i class="fa-solid fa-people-arrows"></i> Skill Swap Hub</h1>
+        <a href="#" class="signin-btn" onclick="openLogin()">Sign In</a>
+    </div>
+
+    <p class="tagline">Learn. Teach. Grow Together.</p>
+
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="register.html">Register</a>
+        <a href="skills.html">Browse Skills</a>
+        <a href="request.html">Request</a>
+    </nav>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <h2>Exchange Skills. Build Your Future.</h2>
+        <p>Learn from real people. Teach what you love.</p>
+        <a href="register.html" class="hero-btn">
+            <i class="fa-solid fa-rocket"></i> Get Started
+        </a>
+    </div>
+    <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+        alt="Students Learning">
+    </div>
+
+</section>
+
+<section class="how-section">
+    <h2>How It Works</h2>
+
+    <div class="how-cards">
+        <div class="card">
+            <i class="fa fa-user-plus icon"></i>
+            <h3>Share Your Skills</h3>
+            <p>Teach what you know to others.</p>
+        </div>
+
+        <div class="card">
+            <i class="fa fa-search icon"></i>
+            <h3>Find Learners</h3>
+            <p>Connect with people who need you.</p>
+        </div>
+
+        <div class="card">
+            <i class="fa fa-handshake icon"></i>
+            <h3>Grow Together</h3>
+            <p>Exchange knowledge and succeed.</p>
+        </div>
+    </div>
+</section>
+
+<footer class="main-footer">
+    © 2026 VIT-AP University
+</footer>
+
+<!-- LOGIN MODAL -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <h2>Sign In</h2>
+
+        <input type="email" placeholder="Email Address">
+        <input type="password" placeholder="Password">
+
+        <button class="login-btn">Continue</button>
+
+        <p>Don't have an account? <a href="register.html">Sign Up</a></p>
+
+        <button class="cancel-btn" onclick="closeLogin()">Cancel</button>
+    </div>
+</div>
+
+<script>
+    if(!localStorage.getItem("username")) {
+    window.location.href = "login.html";
+}
+function openLogin() {
+    document.getElementById("loginModal").style.display = "flex";
+}
+
+function closeLogin() {
+    document.getElementById("loginModal").style.display = "none";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register - Skill Swap Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="top-bar">
+    VIT-AP University
+</div>
+
+<header>
+    <h1>Skill Swap Hub</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="register.html" class="active">Register</a>
+        <a href="skills.html">Browse Skills</a>
+        <a href="request.html">Request</a>
+    </nav>
+   <button class="logout-btn" onclick="logout()">Logout</button>
+</header>
+
+<section class="form-section">
+    <h2>Register Your Skills</h2>
+
+    <form onsubmit="saveUser(event)">
+        <input type="text" id="name" placeholder="👤 Your Name" required>
+        <input type="text" id="teach" placeholder="🎓 Skill You Can Teach" required>
+        <input type="text" id="learn" placeholder="📘 Skill You Want to Learn" required>
+        <button type="submit">Save</button>
+    </form>
+</section>
+
+<footer class="main-footer">
+    © 2026 VIT-AP University
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
